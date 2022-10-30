@@ -1,6 +1,7 @@
 import { useState } from "react";
 // import "./App.css";
 import About from "./components/About";
+import ContactForm from "./components/Contact";
 import Gallery from "./components/Gallery";
 import Nav from "./components/Nav";
 
@@ -29,6 +30,7 @@ function App() {
         currentCategory={currentCategory}
       />
       <main>
+        <ContactForm></ContactForm>
         <Gallery currentCategory={currentCategory}></Gallery>
         <About />
       </main>
