@@ -12,10 +12,7 @@ function ContactForm() {
 
   function validate() {
     const { name, email, message } = formState;
-
-    return (
-      name.length && email.length && validateEmail(email) && message.length
-    );
+    return name && email && validateEmail(email) && message;
   }
 
   function handleChange(e) {
@@ -56,7 +53,7 @@ function ContactForm() {
             type="text"
             defaultValue={name}
             name="name"
-            onChange={handleChange}
+            onBlur={handleChange}
           />
         </div>
         <div>
@@ -65,7 +62,7 @@ function ContactForm() {
             type="email"
             defaultValue={email}
             name="email"
-            onChange={handleChange}
+            onBlur={handleChange}
           />
         </div>
         <div>
@@ -74,7 +71,7 @@ function ContactForm() {
             name="message"
             defaultValue={message}
             rows="5"
-            onChange={handleChange}
+            onBlur={handleChange}
           />
         </div>
         {errorMessage && (
